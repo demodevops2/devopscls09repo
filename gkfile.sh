@@ -1,9 +1,7 @@
-#!/bin/bash
-sudo apt-get update
-sudo apt-get install apache2 -y
-sudo /etc/init.d/apache2 start
-sudo echo "Welcome to jenkins and cheking webhooks auto trigger" > /var/www/html/index.html
-sudo netstat -ntulp
-sudo /etc/init.d/apache2 restart
-
-
+$version = 1.2
+url="http://35.165.247.100:8081/nexus/service/local/artifact/maven/redirect?r=maven-releases&g=doc-examples&a=lambda-java-example&v=$version&e=zip"
+  echo "#"
+  echo "# Try to fetch from Snapshot repo for version: " $version " from " $url
+  echo "#"
+  WGET=`/usr/local/bin/wget $url --output-document=$releasefile`
+  EXITCODE=$?
