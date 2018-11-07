@@ -2,8 +2,8 @@
 - hosts: localhost
   become: true
   tasks: 
-  - name: Download lambda jar file
-    nexus:
+   - name: Download lambda jar file
+     nexus:
        nexus: https://18.236.203.116:8081/
        artifactId: lambda-java-example
        extension: jar
