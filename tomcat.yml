@@ -2,9 +2,6 @@
 - hosts: localhost
   become: true
   tasks: 
- # - name: Download latest VProfile.war file
- #get_url: url=http://18.236.203.116:8081/content/repositories/maven-releases/doc-examples/lambda-java-example/1.1 dest=/tmp/ mode=755
-    
   - name: Download lambda jar file
     nexus:
        nexus: https://18.236.203.116:8081/
