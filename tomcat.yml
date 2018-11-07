@@ -2,7 +2,7 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Download costello locally
+  - name: Download jar file locally
     local_action: >
       nexus nexus=http://18.236.203.116:8081/ artifactId=lambda-java-example extension=jar repository=maven-releases http_user=admin http_pass=Ab@12345
     register: download
